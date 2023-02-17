@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import "normalize";
+
+:root {
+  --black: #2a3038;
+  --light: #e8ccc7;
+  --purple: #8183a1;
+  --blue: #8596b4;
+  --white: #fff6f8;
+  --green: #a3c4bc;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  background-color: var(--light);
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  transition: all 1000ms ease-in-out;
+  z-index: -1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+
+  &.started {
+    background-color: var(--purple);
+    color: var(--white);
+  }
+}
+
+.button {
+  border: none;
+  border-radius: 9999px;
+  font-size: 21px;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  transition: all 1000ms ease-in-out;
+  background-color: var(--black);
+  color: var(--white);
+
+  &--start {
+    background-color: var(--black);
+    color: var(--white);
+
+    &--started {
+      transform: translateY(-2rem);
+      opacity: 0;
+    }
+  }
+}
+
+.reset {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  left: 2rem;
+  background: transparent;
+  border: 0;
+  font-size: 1rem;
+  padding: 1rem;
+  color: var(--light);
+
+  span {
+    font-size: 2em;
+  }
+
+  &--finished {
+    color: var(--white);
+  }
+}
+
+.circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8vmin solid var(--purple);
+  border-radius: 50%;
+  height: 80vmin;
+  width: 80vmin;
+  margin-bottom: 2rem;
+  transition: all 1000ms ease-in-out;
+  z-index: -1;
+
+  &--started {
+    margin-bottom: 0;
+    border-color: var(--light);
+  }
+
+  &--compressed {
+    border-color: var(--blue);
+    height: 60vmin;
+    width: 60vmin;
+    border-width: 16vmin;
+    margin-bottom: 0;
+  }
+
+  &--finished {
+    background-color: var(--green);
+    border-color: transparent;
+    transform: scale(10);
+
+  }
+}
+
+.timer {
+  font-size: 16vmin;
+  opacity: 0;
+  color: var(--white);
+  transition: all 2000ms ease-in-out;
+
+  &--started {
+    opacity: 1;
+  }
+}

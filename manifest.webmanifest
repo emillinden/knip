@@ -1,0 +1,17 @@
+{
+  "short_name": "Knip!",
+  "name": "Knip!",
+  "description": "Knip!",
+  "icons": [
+    {
+      "src": "shortcut.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/dev/knip",
+  "background_color": "#e8ccc7",
+  "display": "standalone",
+  "scope": "/dev/knip",
+  "theme_color": "#8183a1"
+}
